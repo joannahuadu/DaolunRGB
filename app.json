@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/rgb/rgb",
+    "pages/scancode/scancode"
+     ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "自动结算",
+    "navigationBarTextStyle": "black"
+  }
+}

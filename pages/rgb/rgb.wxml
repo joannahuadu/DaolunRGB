@@ -1,0 +1,40 @@
+<!--pages/logs/logs.wxml-->
+<view class="container">
+<view>
+<button  bindtap='accout'>查看COLOR</button>
+</view>
+<view>
+<text wx:for="{{R}}" wx:key="unique">{{item}}</text>
+</view>
+<view>
+<text  wx:for="{{G}}" wx:key="unique" >{{item}}</text>
+</view>
+<view>
+<text  wx:for="{{B}}" wx:key="unique" >{{item}}</text>
+</view>
+<view   wx:for="{{[0, 1, 2]}}"  wx:for-index="i"> 
+<view   wx:for="{{[0, 1, 2]}}" wx:for-index="j"> 
+<view  wx:for="{{[0, 1, 2]}}" wx:for-index="k" >
+<view  wx:if="{{(B[k]!=0||R[i]!=0||G[j]!=0)&&(i===j)&&(j===k)&&(i===k)}}">
+<view  wx:if="{{(B[k]-R[i])>0 && (B[k]-G[j])>0}}">蓝</view>
+<view  wx:elif="{{(R[i]-B[k])>0 && (R[i]-G[j])>0}}">红</view>
+<view  wx:elif="{{(G[j]-B[k])>0 && (G[j]-R[i])>0}}">绿</view>
+<view  wx:elif="{{(R[i]-B[k])>0 && (B[k]-G[j])===0}}">红</view>
+<view  wx:elif="{{(B[k]-R[i])>0 && (R[i]-G[j])===0}}">蓝</view>
+<view  wx:elif="{{(G[j]-R[i])>0 && (R[i]-B[k])===0}}">绿</view>
+</view>
+</view>
+</view>
+</view>
+
+<view>
+<button bindtap='sumGet'>总价</button>
+</view>
+
+
+<view wx:if="{{sum!=0}}">{{sum}}</view>
+
+<view>
+<button bindtap='click'>扫一扫</button>
+</view>
+</view>
